@@ -195,7 +195,7 @@ nav a:hover::after{
   margin-bottom:30px;
   color:#111;
 }
-.offers, .membership:hover img{
+.offers:hover img{
   transform:scale(1.08);
 }
 
