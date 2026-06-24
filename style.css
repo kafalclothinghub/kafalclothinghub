@@ -195,10 +195,6 @@ nav a:hover::after{
   margin-bottom:30px;
   color:#111;
 }
-.offers:hover img{
-  transform:scale(1.08);
-}
-
 /* OFFER CARD WITH IMAGE + DETAILS SIDE BY SIDE */
 .offer-card{
   display:flex;
@@ -223,7 +219,9 @@ nav a:hover::after{
   font-weight:600;
   color:#333;
 }
-
+.offers:hover img{
+  transform:scale(1.08);
+}
 /* MEMBERSHIP */
 .membership-box{
   display:flex;
