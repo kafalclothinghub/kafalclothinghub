@@ -1,110 +1,92 @@
-// Category Filtering
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', function() {
-    const category = this.getAttribute('data-category');
-    
-    // Update active button
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    this.classList.add('active');
-    
-    // Show/hide categories
-    document.querySelectorAll('.category-container').forEach(container => {
-      if(category === 'all') {
-        container.style.display = 'block';
-      } else {
-        container.style.display = container.getAttribute('data-category') === category ? 'block' : 'none';
-      }
+const header = document.getElementById("siteHeader");
+
+function updateHeader() {
+  header.classList.toggle("scrolled", window.scrollY > 60);
+}
+
+window.addEventListener("scroll", updateHeader, { passive: true });
+updateHeader();
+
+document.querySelectorAll(".filter-btn").forEach((button) => {
+  button.addEventListener("click", () => {
+    const category = button.dataset.category;
+
+    document.querySelectorAll(".filter-btn").forEach((item) => {
+      item.classList.toggle("active", item === button);
+    });
+
+    document.querySelectorAll(".category-container").forEach((container) => {
+      const shouldShow = category === "all" || container.dataset.category === category;
+      container.classList.toggle("is-hidden", !shouldShow);
     });
   });
 });
 
-// 3D View Button
-document.querySelectorAll('.view-3d-btn').forEach(btn => {
-  btn.addEventListener('click', function() {
-    alert('3D viewer will open for this product!\nNote: Add .glb model files to your images folder to enable 3D viewing.');
-  });
-});
-
-// Add to Cart
-document.querySelectorAll('.btn-small').forEach(btn => {
-  btn.addEventListener('click', function(e) {
-    e.preventDefault();
-    const productCard = this.closest('.product-card') || this.closest('.featured-card');
-    const productName = productCard.querySelector('h3, h4').textContent;
-    const price = productCard.querySelector('.price')?.textContent || 'N/A';
-    
-    alert(`${productName} added to cart!\nPrice: ${price}`);
-  });
-});
-
-// Animated Particle Effect (Optional - Hero Section Enhancement)
 function createParticles() {
-  const container = document.getElementById('particles');
-  if(!container) return;
-  
-  for(let i = 0; i < 30; i++) {
-    const particle = document.createElement('div');
-    particle.style.position = 'absolute';
-    particle.style.width = Math.random() * 4 + 'px';
-    particle.style.height = particle.style.width;
-    particle.style.background = 'rgba(255, 179, 0, 0.5)';
-    particle.style.borderRadius = '50%';
-    particle.style.left = Math.random() * 100 + '%';
-    particle.style.top = Math.random() * 100 + '%';
-    particle.style.animation = `float ${3 + Math.random() * 4}s ease-in-out infinite`;
+  const container = document.getElementById("particles");
+  if (!container) return;
+
+  for (let index = 0; index < 34; index += 1) {
+    const particle = document.createElement("span");
+    particle.className = "particle";
+    particle.style.left = `${Math.random() * 100}%`;
+    particle.style.top = `${Math.random() * 100}%`;
+    particle.style.setProperty("--move-x", `${Math.random() * 70 - 35}px`);
+    particle.style.setProperty("--time", `${3 + Math.random() * 5}s`);
+    particle.style.animationDelay = `${Math.random() * 3}s`;
     container.appendChild(particle);
   }
 }
 
-// CSS for particle animation
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes float {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.5; }
-    50% { transform: translate(${Math.random() * 50 - 25}px, -30px) rotate(180deg); opacity: 1; }
-  }
-`;
-document.head.appendChild(style);
-
 createParticles();
 
-// Smooth scroll enhancement
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    const href = this.getAttribute('href');
-    if(href !== '#') {
-      e.preventDefault();
-      const element = document.querySelector(href);
-      if(element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+document.querySelectorAll("img").forEach((image) => {
+  image.addEventListener("error", () => {
+    const visualBox = image.closest(".product-image-wrapper, .image-card");
+    if (visualBox) {
+      visualBox.classList.add("image-missing");
     }
   });
 });
 
-// Product Price Sorting (Optional Feature)
-function sortByPrice(order) {
-  const productCards = Array.from(document.querySelectorAll('.product-card'));
-  const container = document.querySelector('.product-grid');
-  
-  productCards.sort((a, b) => {
-    const priceA = parseInt(a.getAttribute('data-price')) || 0;
-    const priceB = parseInt(b.getAttribute('data-price')) || 0;
-    return order === 'asc' ? priceA - priceB : priceB - priceA;
-  });
-  
-  productCards.forEach(card => container.appendChild(card));
-}
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", (event) => {
+    const targetSelector = anchor.getAttribute("href");
+    if (!targetSelector || targetSelector === "#") return;
 
-// Dynamic hover effects for product cards
-document.querySelectorAll('.product-card, .featured-card').forEach(card => {
-  card.addEventListener('mouseenter', function() {
-    this.style.animation = 'none';
-  });
-  
-  card.addEventListener('mouseleave', function() {
-    this.style.animation = '';
+    const target = document.querySelector(targetSelector);
+    if (!target) return;
+
+    event.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 });
 
-console.log('Kafal Clothing Hub - Website Active ✓');
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.16 }
+);
+
+document.querySelectorAll(".reveal").forEach((item) => revealObserver.observe(item));
+
+document.querySelectorAll(".product-card").forEach((card) => {
+  card.addEventListener("mousemove", (event) => {
+    const box = card.getBoundingClientRect();
+    const x = (event.clientX - box.left) / box.width - 0.5;
+    const y = (event.clientY - box.top) / box.height - 0.5;
+    card.style.transform = `translateY(-9px) rotateX(${y * -5}deg) rotateY(${x * 5}deg)`;
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "";
+  });
+});
+
+console.log("Kafal Clothing Hub - enhanced website active");
