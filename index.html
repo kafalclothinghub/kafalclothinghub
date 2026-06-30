@@ -4,365 +4,302 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kafal Clothing Hub</title>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <!-- Model viewer for 3D products -->
-  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.css">
 </head>
 <body>
+  <header class="site-header" id="siteHeader">
+    <a class="logo-box" href="#home" aria-label="Kafal Clothing Hub home">
+      <img src="images/logo.jpeg" alt="Kafal Clothing Hub logo">
+      <span>Kafal Clothing Hub</span>
+    </a>
 
-<!-- HEADER -->
-<header>
-  <div class="logo-box">
-    <img src="images/logo.jpeg" alt="Kafal Logo">
-    <h2>Kafal Clothing Hub</h2>
-  </div>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#categories">Collection</a>
+      <a href="#offers">Offers</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#All Products">Collection</a>
-    <a href="#categories">Shop</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <section class="hero" id="home">
+    <div id="particles" aria-hidden="true"></div>
+    <div class="hero-content">
+      <span class="hero-kicker">Opening Soon</span>
+      <h1>Fashion For Every Season</h1>
+      <p>Fresh jackets, denim, tees and sneakers for everyday style.</p>
+      <a href="#categories" class="btn">Explore Collection</a>
+    </div>
+  </section>
 
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-content">
-    <h1>Opening Soon</h1>
-    <p>Fashion For Every Season</p>
-    <a href="#products" class="btn">Explore Collection</a>
-  </div>
-</section>
-
-<!-- CATEGORIES SECTION - NEW -->
-<section id="categories" class="categories-section">
-  <h2>Checkout by Category</h2>
-  <p class="section-subtitle">Browse Our Exclusive Collections with Pricing and visit our store address mention below</p>
-  
-  <!-- CATEGORY FILTER BUTTONS -->
-  <div class="category-filters">
-    <button class="filter-btn active" data-category="all">All Products</button>
-    <button class="filter-btn" data-category="jackets">Jackets</button>
-    <button class="filter-btn" data-category="tshirts">T-Shirts</button>
-    <button class="filter-btn" data-category="jeans">Jeans</button>
-    <button class="filter-btn" data-category="shoes">Shoes</button>
-  </div>
-
-  <!-- JACKETS CATEGORY -->
-  <div class="category-container" data-category="jackets">
-    <h3><i class="fas fa-wind"></i> Winter Jackets</h3>
-    <div class="product-grid">
-      <div class="product-card" data-price="2499">
-        <div class="product-image-wrapper">
-           <img src="images/jacket1.jpg" alt="Classic Winter Jacket">
-          <span class="badge">New</span>
-        </div>
-        <div class="product-details">
-          <h4>Classic Winter Jacket</h4>
-          <div class="price-info">
-            <span class="price">₹2,499</span>
-            <span class="original-price">₹4,499</span>
-          </div>
-          <!-- <button class="btn btn-small">Add to Cart</button> -->
-        </div>
-      </div>
-
-      <div class="product-card" data-price="2199">
-        <div class="product-image-wrapper">
-        <img src="images/jacket2.jpg"  alt="Premium Leather Jacket">
-          <span class="badge hot">Hot</span>
-        </div>
-        <div class="product-details">
-          <h4>Premium Leather Jacket</h4>
-          <div class="price-info">
-            <span class="price">₹2,199</span>
-            <span class="original-price">₹3,999</span>
-          </div>
-          <!-- <button class="btn btn-small">Add to Cart</button> -->
-        </div>
-      </div>
-
-      <div class="product-card" data-price="2099">
-        <div class="product-image-wrapper">
-       <img src="images/jacket3.jpg"  alt="Casual Denim Jacket">
-          <span class="badge sale">Sale</span>
-        </div>
-        <div class="product-details">
-          <h4>Casual Denim Jacket</h4>
-          <div class="price-info">
-            <span class="price">₹2,099</span>
-            <span class="original-price">₹3,499</span>
-          </div>
-          <!-- <button class="btn btn-small">Add to Cart</button> -->
-        </div>
-      </div>
-
-      <div class="product-card" data-price="1999">
-        <div class="product-image-wrapper">
-      <img src="images/jacket4.jpg" alt="Designer Wool Jacket">
-        </div>
-        <div class="product-details">
-          <h4>Designer Wool Jacket</h4>
-          <div class="price-info">
-            <span class="price">₹1,999</span>
-            <span class="original-price">₹3,299</span>
-          </div>
-          <!-- <button class="btn btn-small">Add to Cart</button> -->
-        </div>
-      </div>
+  <div class="running-strip" aria-label="Latest store highlights">
+    <div class="running-track">
+      <span>Opening Soon</span>
+      <span>Festival Offers</span>
+      <span>Premium Membership Benefits</span>
+      <span>New Winter Collection</span>
+      <span>Visit Store at Someshwar</span>
+      <span>Opening Soon</span>
+      <span>Festival Offers</span>
+      <span>Premium Membership Benefits</span>
+      <span>New Winter Collection</span>
+      <span>Visit Store at Someshwar</span>
     </div>
   </div>
 
-  <!-- T-SHIRTS CATEGORY -->
-  <div class="category-container" data-category="tshirts" style="display:none;">
-    <h3><i class="fas fa-shirt"></i> T-Shirts Collection</h3>
-    <div class="product-grid">
-      <div class="product-card" data-price="399">
-        <div class="product-image-wrapper">
-          <img src="images/tshirt1.png" alt="Basic T-Shirt">
-          <span class="badge">New</span>
-        </div>
-        <div class="product-details">
-          <h4>Basic White T-Shirt</h4>
-          <div class="price-info">
-            <span class="price">₹399</span>
-            <span class="original-price">₹699</span>
-          </div>
-          <!-- <button class="btn btn-small">Add to Cart</button> -->
-        </div>
-      </div>
+  <section id="categories" class="categories-section">
+    <h2>Checkout by Category</h2>
+    <p class="section-subtitle">Browse our latest collection with special opening prices.</p>
 
-      <div class="product-card" data-price="499">
-        <div class="product-image-wrapper">
-          <img src="images/tshirt2.png" alt="Graphic T-Shirt">
-          <span class="badge hot">Hot</span>
-        </div>
-        <div class="product-details">
-          <h4>Graphic Print T-Shirt</h4>
-          <div class="price-info">
-            <span class="price">₹499</span>
-            <span class="original-price">₹799</span>
-          </div>
-          <!-- <button class="btn btn-small">Add to Cart</button> -->
-        </div>
-      </div>
+    <div class="category-filters">
+      <button class="filter-btn active" type="button" data-category="all">All Products</button>
+      <button class="filter-btn" type="button" data-category="jackets">Jackets</button>
+      <button class="filter-btn" type="button" data-category="tshirts">T-Shirts</button>
+      <button class="filter-btn" type="button" data-category="jeans">Jeans</button>
+      <button class="filter-btn" type="button" data-category="shoes">Shoes</button>
+    </div>
 
-      <div class="product-card" data-price="599">
-        <div class="product-image-wrapper">
-          <img src="images/tshirt3.png" alt="Sports T-Shirt">
-        </div>
-        <div class="product-details">
-          <h4>Sports Performance T-Shirt</h4>
-          <div class="price-info">
-            <span class="price">₹599</span>
-            <span class="original-price">₹1,099</span>
+    <div class="category-container" data-category="jackets">
+      <h3><i class="fas fa-wind"></i> Winter Jackets</h3>
+      <div class="product-grid">
+        <article class="product-card reveal" data-price="2499">
+          <div class="product-image-wrapper">
+            <img src="images/jacket1.jpg" alt="Classic Winter Jacket">
+            <span class="badge">New</span>
           </div>
-          <!-- <button class="btn btn-small">Add to Cart</button> -->
-        </div>
-      </div>
+          <div class="product-details">
+            <h4>Classic Winter Jacket</h4>
+            <div class="price-info"><span class="price">&#8377;2,499</span><span class="original-price">&#8377;4,499</span></div>
+          </div>
+        </article>
 
-      <div class="product-card" data-price="599">
-        <div class="product-image-wrapper">
-          <img src="images/tshirt4.png" alt="Premium T-Shirt">
-          <span class="badge sale">Sale</span>
-        </div>
-        <div class="product-details">
-          <h4>Premium Cotton T-Shirt</h4>
-          <div class="price-info">
-            <span class="price">₹599</span>
-            <span class="original-price">₹1,099</span>
+        <article class="product-card reveal" data-price="2199">
+          <div class="product-image-wrapper">
+            <img src="images/jacket2.jpg" alt="Premium Leather Jacket">
+            <span class="badge hot">Hot</span>
           </div>
-          <!-- <button class="btn btn-small">Add to Cart</button> -->
+          <div class="product-details">
+            <h4>Premium Leather Jacket</h4>
+            <div class="price-info"><span class="price">&#8377;2,199</span><span class="original-price">&#8377;3,999</span></div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-price="2099">
+          <div class="product-image-wrapper">
+            <img src="images/jacket3.jpg" alt="Casual Denim Jacket">
+            <span class="badge sale">Sale</span>
+          </div>
+          <div class="product-details">
+            <h4>Casual Denim Jacket</h4>
+            <div class="price-info"><span class="price">&#8377;2,099</span><span class="original-price">&#8377;3,499</span></div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-price="1999">
+          <div class="product-image-wrapper">
+            <img src="images/jacket4.jpg" alt="Designer Wool Jacket">
+          </div>
+          <div class="product-details">
+            <h4>Designer Wool Jacket</h4>
+            <div class="price-info"><span class="price">&#8377;1,999</span><span class="original-price">&#8377;3,299</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="category-container" data-category="tshirts">
+      <h3><i class="fas fa-shirt"></i> T-Shirts Collection</h3>
+      <div class="product-grid">
+        <article class="product-card reveal" data-price="399">
+          <div class="product-image-wrapper">
+            <img src="images/tshirt1.png" alt="Basic White T-Shirt">
+            <span class="badge">New</span>
+          </div>
+          <div class="product-details">
+            <h4>Basic White T-Shirt</h4>
+            <div class="price-info"><span class="price">&#8377;399</span><span class="original-price">&#8377;699</span></div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-price="499">
+          <div class="product-image-wrapper">
+            <img src="images/tshirt2.png" alt="Graphic Print T-Shirt">
+            <span class="badge hot">Hot</span>
+          </div>
+          <div class="product-details">
+            <h4>Graphic Print T-Shirt</h4>
+            <div class="price-info"><span class="price">&#8377;499</span><span class="original-price">&#8377;799</span></div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-price="599">
+          <div class="product-image-wrapper">
+            <img src="images/tshirt3.png" alt="Sports Performance T-Shirt">
+          </div>
+          <div class="product-details">
+            <h4>Sports Performance T-Shirt</h4>
+            <div class="price-info"><span class="price">&#8377;599</span><span class="original-price">&#8377;1,099</span></div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-price="599">
+          <div class="product-image-wrapper">
+            <img src="images/tshirt4.png" alt="Premium Cotton T-Shirt">
+            <span class="badge sale">Sale</span>
+          </div>
+          <div class="product-details">
+            <h4>Premium Cotton T-Shirt</h4>
+            <div class="price-info"><span class="price">&#8377;599</span><span class="original-price">&#8377;1,099</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="category-container" data-category="jeans">
+      <h3><i class="fas fa-person"></i> Premium Jeans</h3>
+      <div class="product-grid">
+        <article class="product-card reveal" data-price="1099">
+          <div class="product-image-wrapper">
+            <img src="images/Jeans1.jpg" alt="Skinny Fit Jeans">
+            <span class="badge">New</span>
+          </div>
+          <div class="product-details">
+            <h4>Skinny Fit Jeans</h4>
+            <div class="price-info"><span class="price">&#8377;1,099</span><span class="original-price">&#8377;1,599</span></div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-price="1299">
+          <div class="product-image-wrapper">
+            <img src="images/Jeans2.jpg" alt="Straight Fit Jeans">
+            <span class="badge hot">Hot</span>
+          </div>
+          <div class="product-details">
+            <h4>Straight Fit Jeans</h4>
+            <div class="price-info"><span class="price">&#8377;1,299</span><span class="original-price">&#8377;2,099</span></div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-price="1999">
+          <div class="product-image-wrapper">
+            <img src="images/Jeans3.jpg" alt="Slim Fit Premium Jeans">
+            <span class="badge sale">Sale</span>
+          </div>
+          <div class="product-details">
+            <h4>Slim Fit Premium Jeans</h4>
+            <div class="price-info"><span class="price">&#8377;1,999</span><span class="original-price">&#8377;2,599</span></div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-price="1499">
+          <div class="product-image-wrapper">
+            <img src="images/Jeans4.jpg" alt="Relaxed Fit Jeans">
+          </div>
+          <div class="product-details">
+            <h4>Relaxed Fit Jeans</h4>
+            <div class="price-info"><span class="price">&#8377;1,499</span><span class="original-price">&#8377;2,999</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="category-container" data-category="shoes">
+      <h3><i class="fas fa-shoe-prints"></i> Shoes & Sneakers</h3>
+      <div class="product-grid">
+        <article class="product-card reveal" data-price="2099">
+          <div class="product-image-wrapper">
+            <img src="images/shoes1.jpg" alt="New Article Shoes">
+            <span class="badge">New</span>
+          </div>
+          <div class="product-details">
+            <h4>New Article</h4>
+            <div class="price-info"><span class="price">&#8377;2,099</span><span class="original-price">&#8377;3,499</span></div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-price="2399">
+          <div class="product-image-wrapper">
+            <img src="images/shoes2.jpg" alt="Casual Sneakers">
+            <span class="badge hot">Hot</span>
+          </div>
+          <div class="product-details">
+            <h4>Casual Sneakers</h4>
+            <div class="price-info"><span class="price">&#8377;2,399</span><span class="original-price">&#8377;3,599</span></div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-price="2699">
+          <div class="product-image-wrapper">
+            <img src="images/shoes3.jpg" alt="Canvas Shoes">
+            <span class="badge sale">Sale</span>
+          </div>
+          <div class="product-details">
+            <h4>Canvas Shoes</h4>
+            <div class="price-info"><span class="price">&#8377;2,699</span><span class="original-price">&#8377;2,799</span></div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-price="1899">
+          <div class="product-image-wrapper">
+            <img src="images/shoes4.jpg" alt="New Article Sneakers">
+          </div>
+          <div class="product-details">
+            <h4>New Article</h4>
+            <div class="price-info"><span class="price">&#8377;1,899</span><span class="original-price">&#8377;4,099</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="offers-membership" id="offers">
+    <div class="offers reveal">
+      <h2>Special Offer</h2>
+      <div class="offer-card image-card">
+        <img src="images/offers.png" alt="Special offer banner">
+      </div>
+    </div>
+
+    <div class="membership reveal">
+      <h2>Premium Membership Card</h2>
+      <div class="membership-box image-card">
+        <div class="card-image">
+          <img src="images/membership.png" alt="Kafal Clothing Hub membership card">
+        </div>
+        <div class="card-content">
+          <h3>Kafal Clothing Hub Membership</h3>
+          <ul>
+            <li>Exclusive member discounts</li>
+            <li>Festival special offers</li>
+            <li>Priority shopping benefits</li>
+            <li>Lucky customer rewards</li>
+          </ul>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- JEANS CATEGORY -->
-  <div class="category-container" data-category="jeans" style="display:none;">
-    <h3><i class="fas fa-person"></i> Premium Jeans</h3>
-    <div class="product-grid">
-      <div class="product-card" data-price="1,099">
-        <div class="product-image-wrapper">
-          <img src="images/Jeans1.jpg" alt="Skinny Jeans">
-          <span class="badge">New</span>
-        </div>
-        <div class="product-details">
-          <h4>Skinny Fit Jeans</h4>
-          <div class="price-info">
-            <span class="price">₹1,099</span>
-            <span class="original-price">₹1,599</span>
-          </div>
-          <!-- <button class="btn btn-small">Add to Cart</button> -->
-        </div>
-      </div>
-
-      <div class="product-card" data-price="1299">
-        <div class="product-image-wrapper">
-          <img src="images/Jeans2.jpg" alt="Straight Fit Jeans">
-          <span class="badge hot">Hot</span>
-        </div>
-        <div class="product-details">
-          <h4>Straight Fit Jeans</h4>
-          <div class="price-info">
-            <span class="price">₹1,299</span>
-            <span class="original-price">₹2,099</span>
-          </div>
-          <button class="btn btn-small">Add to Cart</button>
-        </div>
-      </div>
-
-      <div class="product-card" data-price="1199">
-        <div class="product-image-wrapper">
-          <img src="images/Jeans3.jpg" alt="Slim Fit Jeans">
-          <span class="badge sale">Sale</span>
-        </div>
-        <div class="product-details">
-          <h4>Slim Fit Premium Jeans</h4>
-          <div class="price-info">
-            <span class="price">₹1,999</span>
-            <span class="original-price">₹1,999</span>
-          </div>
-          <button class="btn btn-small">Add to Cart</button>
-        </div>
-      </div>
-
-      <div class="product-card" data-price="1499">
-        <div class="product-image-wrapper">
-          <img src="images/Jeans4.jpg" alt="Relaxed Fit Jeans">
-        </div>
-        <div class="product-details">
-          <h4>Relaxed Fit Jeans</h4>
-          <div class="price-info">
-            <span class="price">₹1,499</span>
-            <span class="original-price">₹2,999</span>
-          </div>
-          <button class="btn btn-small">Add to Cart</button>
-        </div>
-      </div>
+  <section id="contact" class="contact">
+    <h2>Visit Us</h2>
+    <p>Near Honda Showroom, Kausani Road, Someshwar</p>
+    <div class="contact-actions">
+      <a href="tel:+919758340002"><i class="fas fa-phone"></i> +91-9758340002</a>
+      <a href="tel:+919811670496"><i class="fas fa-phone"></i> +91-9811670496</a>
     </div>
-  </div>
+  </section>
 
-  <!-- SHOES CATEGORY -->
-  <div class="category-container" data-category="shoes" style="display:none;">
-    <h3><i class="fas fa-shoe-prints"></i> Shoes & Sneakers</h3>
-    <div class="product-grid">
-      <div class="product-card" data-price="2099">
-        <div class="product-image-wrapper">
-           <img src="images/shoes1.jpg" alt="Casual Sneakers">
-          <span class="badge">New</span>
-        </div>
-        <div class="product-details">
-          <h4>New Article</h4>
-          <div class="price-info">
-            <span class="price">₹2,099</span>
-            <span class="original-price">₹3,499</span>
-          </div>
-          <button class="btn btn-small">Add to Cart</button>
-        </div>
-      </div>
+  <a href="https://wa.me/919758340002" class="whatsapp" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
-      <div class="product-card" data-price="2399">
-        <div class="product-image-wrapper">
-          <img src="images/shoes2.jpg" alt="Casual Sneakers">
-          <span class="badge hot">Hot</span>
-        </div>
-        <div class="product-details">
-          <h4>Casual Sneakers</h4>
-          <div class="price-info">
-            <span class="price">₹2,399</span>
-            <span class="original-price">₹3,599</span>
-          </div>
-          <button class="btn btn-small">Add to Cart</button>
-        </div>
-      </div>
+  <footer>
+    <span>&copy; 2026 Kafal Clothing Hub</span>
+    <a href="#home">Back to top</a>
+  </footer>
 
-      <div class="product-card" data-price="1699">
-        <div class="product-image-wrapper">
-          <img src="images/shoes3.jpg" alt="Canvas Shoes">
-          <span class="badge sale">Sale</span>
-        </div>
-        <div class="product-details">
-          <h4>Canvas Shoes</h4>
-          <div class="price-info">
-            <span class="price">₹2,699</span>
-            <span class="original-price">₹2,799</span>
-          </div>
-          <button class="btn btn-small">Add to Cart</button>
-        </div>
-      </div>
-
-      <div class="product-card" data-price="1899">
-        <div class="product-image-wrapper">
-          <img src="images/shoes4.jpg" alt="New Article">
-        </div>
-        <div class="product-details">
-          <h4>New Article</h4>
-          <div class="price-info">
-            <span class="price">₹1,899</span>
-            <span class="original-price">₹4,099</span>
-          </div>
-          <button class="btn btn-small">Add to Cart</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- OFFERS + MEMBERSHIP SIDE BY SIDE -->
-<section class="offers-membership" id="offers">
-  <div class="offers">
-    <h2>🎁 Special Offer</h2>
-    <div class="offer-card">
-      <img src="images/offers.png" alt="Special Offer">
-         </div>
-  </div>
-
-  <div class="membership">
-    <h2>💳 Premium Membership Card</h2>
-    <div class="membership-box">
-      <div class="card-image">
-        <img src="images/membership.png" alt="Membership Card">
-      </div>
-      <div class="card-content">
-        <h3>Kafal Clothing Hub Membership</h3>
-        <ul>
-          <li>✔ Exclusive Member Discounts</li>
-          <li>✔ Festival Special Offers</li>
-          <li>✔ Priority Shopping Benefits</li>
-          <li>✔ Lucky Customer Rewards</li>
-        </ul>
-        <!-- <a href="#contact" class="btn">Apply Now</a> -->
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="contact">
-  <h2>Visit Us</h2>
-  <p>
-    Near Honda Showroom,<br>
-    Kausani Road, Someshwar<br>
-    Ph.- <a href="tel:+919758340002">+91-9758340002 & +91-9811670496 </a><br>
-   </p>
-</section>
-
-<!-- WHATSAPP -->
-<a href="https://wa.me/919758340002" class="whatsapp">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
-<!-- FOOTER -->
-<footer>
-  © 2026 Kafal Clothing Hub
-</footer>
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
