@@ -82,7 +82,7 @@ nav a:hover::after{
   height:100vh;
   background:
   linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
-  url("images/background.png") center/cover no-repeat;
+  url("images/fb.png") center/cover no-repeat;
   background-attachment: Fixed;
   display:flex;
   justify-content:center;
