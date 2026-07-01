@@ -62,12 +62,12 @@ img {
 }
 
 .logo-box img {
-  width: 54px;
-  height: 54px;
+  width: 84px;
+  height: 84px;
   border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, .5);
+  border: 3px solid rgba(255, 255, 255, .5);
   object-fit: cover;
-  transition: transform .4s ease;
+  transition: transform .6s ease;
 }
 
 .site-header.scrolled .logo-box img {
